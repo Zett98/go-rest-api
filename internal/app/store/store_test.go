@@ -1,8 +1,9 @@
 package store
 
-import "testing"
-
-import "os"
+import (
+	"os"
+	"testing"
+)
 
 var (
 	databaseURL string

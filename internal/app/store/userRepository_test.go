@@ -1,10 +1,11 @@
 package store
 
-import "testing"
+import (
+	"testing"
 
-import "go-rest-api/internal/app/model"
-
-import "github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/assert"
+	"go-rest-api/internal/app/model"
+)
 
 // TestUserRepositoryCreate ... tests creation of user
 func TestUserRepositoryCreate(t *testing.T) {
