@@ -17,7 +17,7 @@ type APIServer struct {
 	store  *store.Store
 }
 
-// New ...
+// New ... returns new server
 func New(config *Config) *APIServer {
 	return &APIServer{
 		config: config,
@@ -26,7 +26,7 @@ func New(config *Config) *APIServer {
 	}
 }
 
-// Start ...
+// Start ... starts a new server
 func (s *APIServer) Start() error {
 	if err := s.configureLogger(); err != nil {
 		return err
