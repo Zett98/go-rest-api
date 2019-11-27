@@ -1,4 +1,4 @@
-package store
+package sqlstore
 
 import (
 	"database/sql"
@@ -7,37 +7,15 @@ import (
 
 // Store .. storing config here
 type Store struct {
-	config         *Config
 	db             *sql.DB
 	UserRepository *UserRepository
 }
 
 // New ... new config
-func New(config *Config) *Store {
+func New(db *sql.DB) *Store {
 	return &Store{
-		config: config,
+		db: db,
 	}
-}
-
-// Open ... opens db connection
-func (s *Store) Open() error {
-	db, err := sql.Open("postgres", s.config.DatabaseURL)
-	if err != nil {
-		return err
-	}
-
-	if err := db.Ping(); err != nil {
-		return err
-	}
-
-	s.db = db
-
-	return nil
-}
-
-//Close ... closes db conn
-func (s *Store) Close() {
-	s.db.Close()
 }
 
 //User ... used to manipulate users

@@ -1,7 +1,7 @@
 package apiserver
 
 import (
-	"go-rest-api/internal/app/store"
+	"go-rest-api/internal/app/store/sqlstore"
 	"io"
 	"net/http"
 
@@ -14,7 +14,7 @@ type APIServer struct {
 	config *Config
 	logger *logrus.Logger
 	router *mux.Router
-	store  *store.Store
+	store  *sqlstore.Store
 }
 
 // New ... returns new server
@@ -59,7 +59,7 @@ func (s *APIServer) configureRouter() {
 }
 
 func (s *APIServer) configureStore() error {
-	st := store.New(s.config.Store)
+	st := sqlstore.New(s.config.Store)
 	if err := st.Open(); err != nil {
 		return err
 	}
