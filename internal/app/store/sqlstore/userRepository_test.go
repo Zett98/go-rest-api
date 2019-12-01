@@ -37,3 +37,19 @@ func TestUserRepositoryFindByEmail(t *testing.T) {
 	assert.NotNil(t, u)
 
 }
+
+// TestUserRepositoryFind ... tests find user by id
+func TestUserRepositoryFind(t *testing.T) {
+	db, teardown := TestDB(t, databaseURL)
+
+	defer teardown("users")
+
+	s := New(db)
+	u := model.TestUser(t)
+
+	s.User().Create(u)
+	u, err := s.User().Find(u.ID)
+	assert.NoError(t, err)
+	assert.NotNil(t, u)
+
+}
