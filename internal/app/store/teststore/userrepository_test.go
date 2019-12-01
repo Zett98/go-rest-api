@@ -3,6 +3,7 @@ package teststore
 import (
 	"github.com/stretchr/testify/assert"
 	"go-rest-api/internal/app/model"
+	"go-rest-api/internal/app/store"
 	"testing"
 )
 
@@ -19,7 +20,7 @@ func TestUserRepositoryFindByEmail(t *testing.T) {
 	s := New()
 	email := "user@example.org"
 	_, err := s.User().FindByEmail(email)
-	assert.Error(t, err)
+	assert.EqualError(t, err, store.ErrRecordNotFound.Error())
 
 	u := model.TestUser(t)
 	u.Email = email

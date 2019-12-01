@@ -5,6 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 	"go-rest-api/internal/app/model"
+	"go-rest-api/internal/app/store"
 )
 
 // TestUserRepositoryCreate ... tests creation of user
@@ -26,12 +27,13 @@ func TestUserRepositoryFindByEmail(t *testing.T) {
 	defer teardown("users")
 
 	s := New(db)
-	u1 := model.TestUser(t)
-	_, err := s.User().FindByEmail(u1.Email)
+	u := model.TestUser(t)
+	_, err := s.User().FindByEmail(u.Email)
+	assert.EqualError(t, err, store.ErrRecordNotFound.Error())
 
-	s.User().Create(u1)
-	u2, err := s.User().FindByEmail(u1.Email)
+	s.User().Create(u)
+	u, err = s.User().FindByEmail(u.Email)
 	assert.NoError(t, err)
-	assert.NotNil(t, u2)
+	assert.NotNil(t, u)
 
 }
