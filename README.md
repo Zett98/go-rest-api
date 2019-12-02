@@ -12,4 +12,5 @@ localhost:8080/private/whoami -- GET REQUEST -- returns info about user requires
 availible commands:
 
 make build;./apiserver -- run the server
+
 make test -- run tests
