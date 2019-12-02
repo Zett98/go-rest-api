@@ -1,16 +1,27 @@
 # go-rest-api
 
 
-simple rest api in go.
+## Golang simple rest api with authentication
 
-localhost:8080/users -- POST request requires email and password fields
+## Enndpoints
 
-localhost:8080/sessions -- POST request requires email and password fields
+### localhost:8080/users
+ POST request, requires email and password fields
 
-localhost:8080/private/whoami -- GET REQUEST -- returns info about user requires session cookie to be present
+### localhost:8080/sessions 
+POST request, requires email and password fields
 
-availible commands:
+### localhost:8080/private/whoami
+GET request, returns info about user requires session cookie to be present
 
-make build;./apiserver -- run the server
+## Availible commands:
 
-make test -- run tests
+### Start
+```
+ -> make build
+ -> ./apiserver 
+``` 
+### Testing
+```
+-> make test 
+```
