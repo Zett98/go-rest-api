@@ -9,9 +9,7 @@ localhost:8080/sessions -- POST request requires email and password fields
 
 localhost:8080/private/whoami -- GET REQUEST -- returns info about user requires session cookie to be present
 
+availible commands:
 
-requirements go,postgres. 
-
-to run the server type this in project folder - make build;./apiserver
-
-to run tests - make test
+make build;./apiserver -- run the server
+make test -- run tests
