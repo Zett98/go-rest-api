@@ -3,7 +3,7 @@
 
 ## Golang simple rest api with authentication
 
-## Enndpoints
+## Endpoints
 
 ### localhost:8080/users
  POST request, requires email and password fields
