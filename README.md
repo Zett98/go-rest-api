@@ -17,7 +17,7 @@ incorporates user auth and session cookies
 │        ├── apiserver
 │        │     ├──  apiserver.go
 │        │     ├──  config.go
-│        │     ├──  responsewWriter.go
+│        │     ├──  responsewriter.go
 │        │     ├──  server_internal_test.go
 │        │     └──  server.go
 │        ├── model
