@@ -1,14 +1,14 @@
 package apiserver
 
-// Config ... server config
+// Config ...
 type Config struct {
 	BindAddr    string `toml:"bind_addr"`
 	LogLevel    string `toml:"log_level"`
 	DatabaseURL string `toml:"database_url"`
-	SessionKey string `toml:"session_key"`
+	SessionKey  string `toml:"session_key"`
 }
 
-// NewConfig ... returns config for server
+// NewConfig ...
 func NewConfig() *Config {
 	return &Config{
 		BindAddr: ":8080",
