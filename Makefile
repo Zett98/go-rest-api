@@ -4,7 +4,7 @@ build:
 
 .Phony: run
 run:
-	go build -v ./cmd/apiservser; ./apiserver
+	go run -race -v ./cmd/apiserver/main.go
 
 .Phony: test
 test: 

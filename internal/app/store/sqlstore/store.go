@@ -2,9 +2,10 @@ package sqlstore
 
 import (
 	"database/sql"
-	"go-rest-api/internal/app/store"
 
 	_ "github.com/lib/pq" // ... should be anonymous import ???
+
+	"go-rest-api/internal/app/store"
 )
 
 // Store .. storing config here

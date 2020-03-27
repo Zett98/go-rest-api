@@ -4,8 +4,9 @@ import (
 	"flag"
 	"log"
 
+	"go-rest-api/internal/app/apiserver"
+
 	"github.com/BurntSushi/toml"
-	apiserver "go-rest-api/internal/app/apiserver"
 )
 
 var (
@@ -17,6 +18,7 @@ func init() {
 }
 
 func main() {
+
 	flag.Parse()
 
 	config := apiserver.NewConfig()

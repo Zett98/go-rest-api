@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	"go-rest-api/internal/app/store/sqlstore"
+
 	"github.com/gorilla/sessions"
 	_ "github.com/lib/pq" // ...
 )

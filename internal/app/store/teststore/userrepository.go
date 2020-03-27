@@ -5,7 +5,7 @@ import (
 	"go-rest-api/internal/app/store"
 )
 
-// UserRepository ... userrepo for tests
+// UserRepository ... userRepo for tests
 type UserRepository struct {
 	store *Store
 	users map[int]*model.User

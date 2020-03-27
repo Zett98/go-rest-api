@@ -14,6 +14,7 @@ import (
 	"go-rest-api/internal/app/model"
 
 	"go-rest-api/internal/app/store/teststore"
+
 	"github.com/stretchr/testify/assert"
 )
 
